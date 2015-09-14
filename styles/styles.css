@@ -1,0 +1,67 @@
+.bodyClass {
+    padding-top: 30px;
+    background: #d58512;
+    background-position: top;
+    background-color: ghostwhite;
+    background-size: cover;
+    /*background-image: url('../assets/energy.jpg');*/
+    color: #204d74;
+}
+.splash{
+    /*background-image: url('../assets/energy.jpg');*/
+}
+.well2 {
+    background: rgba(192, 192, 192, 0.4);
+}
+
+.container{
+    overflow: visible;
+    position: absolute;
+    width: 100%;
+
+}
+.navbar  .collapse .nav> li >a {
+    height: 70px;
+    padding-top: 25px;
+    color: #555555;
+    font-size: 120%;
+}
+.navbar{
+    background-color:ghostwhite;
+}
+.HeaderAndNavbarClass{
+    height: 70px;
+    /*background-color:orange;*/
+
+}
+.navbar-brand{
+    padding-top: 25px;
+    color: #d58512;
+}
+
+.HeaderImage{
+
+    text-align: center;
+    height:50% ;
+    background-size:contain;
+    overflow: hidden;
+
+}
+.ContentClass  {
+    color: #46b8da;
+}
+.AdminVisibility{
+    visibility: visible;
+}
+.UserVisibility{
+    visibility: hidden;
+}
+
+
+
+/* AJ */
+.angular-google-map-container { width: 80%; height: 400px; }
+
+.modal-body #bodyInput {
+    text-align: right;
+}

@@ -1,0 +1,58 @@
+<div>
+    <ng-include src="'views/head/head.html'"></ng-include>
+</div>
+<div class="row">
+    <div class="visible-xs-inline-block col-xs-1"></div>
+    <div ng-controller="SocialController" class="col-xs-10 " >
+        <h1 align="center" style="color: #d58512;">{{MainAccount.theSocialTitleText}}</h1>
+        <div  class="row">
+            <div  class="col-lg-1 col-md-1 col-sm-1 col-xs-1" ></div>
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" >
+                <h2 style="color: #d58512;">{{dt| date:'fullDate'}}</h2>
+
+                <div id="albumImage">
+                    <img  ng-src="{{currentImage}} " style="width:80vw ; height:65vh"/>
+                </div>
+            </div>
+            <div  class="col-lg-1 col-md-1 col-sm-1 col-xs-1" ></div>
+
+        </div>
+        <div class="row">
+            <div  class="col-lg-1 col-md-1 col-sm-1 col-xs-1" ></div>
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" >
+                <div id="thumbWrapper" >
+                    <ul id="thumbList">
+                        <li ng-repeat="image in tempPic" ng-click="setCurrentImage(image.picture.url)" ng-dblclick="clear(   ) ">
+                            <img style="width: 100px ;height: 50px"  ng-src="{{image.picture.url}}" alt="description"/>
+                        </li>
+                    </ul>
+                    <hr/>
+                </div>
+
+            </div>
+            <div  class="col-lg-1 col-md-1 col-sm-1 col-xs-1" ></div>
+
+        </div>
+        <div class="row">
+            <div  class="col-lg-1 col-md-1 col-sm-1 col-xs-1" ></div>
+            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2">
+                <p class="input-group">
+                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened"
+                        min-date="minDate" max-date="'2016-06-22'" datepicker-options="dateOptions"
+                        date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+                <div ng-if="$parent.userType == 'admin' || $parent.userType == 'member'" align="center" >
+                <button  class="btn btn-primary animated infinite tada" ng-click="addSocialPic()">Add Picture</button>
+                </div>
+            </div>
+            <div  class="col-lg-1 col-md-1 col-sm-1 col-xs-1" ></div>
+
+
+        </div>
+    </div>
+    <div  class="visible-xs-inline-block col-xs-1"></div>
+</div>

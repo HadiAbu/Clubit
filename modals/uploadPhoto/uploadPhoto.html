@@ -1,0 +1,21 @@
+
+
+<div class="modal-header">
+    <h1 class="modal-title">Uploading New Photo</h1>
+</div>
+<div class="modal-body">
+    <div>
+        <input type="file" value="Choose Image"
+               onchange="angular.element(this).scope().uploadFile(this.files)"/>
+
+        <br/>
+        <!--<img ng-src="{{imageName[0]}}" alt="" width="50"/>-->
+        <p>It might <span style="color: red;font-size: 150%" > Take a while </span>to upload your files..
+        don't forget, patience is a <span style="color: red;" >virtue</span></p>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="bt btn-primary" ng-click="ok()">OK</button>
+    <button class="bt btn-warning" ng-click="cancel()">Cancel</button>
+</div>
+

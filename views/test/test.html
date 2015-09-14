@@ -1,0 +1,61 @@
+<div>
+    <input type="file" value="CHOOSE FILE"
+           onchange="angular.element(this).scope().uploadPicture(this.files)"/>
+
+    <br/>
+    <img ng-src="{{imageName}}" alt="" width="300"/>
+    <br/>
+    <button ng-click="login()">login test</button>
+    <button ng-click="createObject()">create obj</button>
+    <button ng-click="getObject()">get object</button>
+    <button ng-click="updateObject()">update object</button>
+    <button ng-click="deleteObject()">delete object</button>
+    <br/>
+
+
+    <button ng-click="createMessagesTable()">create message tbl</button>
+    <br/>
+
+    bulid BD
+    <input type="file" value="Build DB"
+           onchange="angular.element(this).scope().DBBuild(this.files)"/>
+    <br/>
+    build activity
+    <input type="file" value="Build DB"
+           onchange="angular.element(this).scope().BuildActivity(this.files)"/>
+
+    <br/>
+    add to activity
+    <input type="file" value="Build DB"
+           onchange="angular.element(this).scope().addToActivityArrays(this.files)"/>
+
+    <br/>
+    get activity arrays
+    <input type="file" value="Build DB"
+           onchange="angular.element(this).scope().getRelated(this.files)"/>
+
+    <br/>
+    test configuration service
+    <input type="file" value="Build DB"
+           onchange="angular.element(this).scope().testParseConfigurationService(this.files)"/>
+
+    <br/>
+    get All account pics
+    <button ng-click="getAllAccountPictures()">All Account Pictures</button>
+    <br/>
+    <label>add social table</label>
+
+    <label>social Photo Date</label>
+    <br/>
+    <input type="Date" id="bodyInput" ng-model="date"/>
+    <br/>
+
+    <label>create create table --> choose date first</label>
+
+    <input type="file" value="Build DB"
+           onchange="angular.element(this).scope().addTableSocial(this.files)"/>
+
+    <br/>
+    <button  ng-click="updateSocial()" >create relation between social and pics</button>
+
+</div>

@@ -1,0 +1,80 @@
+<div>
+    <ng-include src="'views/head/head.html'"></ng-include>
+</div>
+
+<div class="ContentClass">
+
+    <div class="row"  >
+        <div class="col-lg-1 col-md-1 visible-lg visible-md"></div>
+        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+            <div  ng-if="userType == 'admin'">
+                <h1 style="color:#d58512;">  Welcome Back {{userName}} :)</h1>
+                <h4 style="color:#d58512;">As an Admin, you can <span style="font-size:140%;font-style: italic;color:red;"> double click </span>
+
+                    Photos, Tabs, Messages and Guides
+                 to edit them.</h4>
+            </div>
+            <div  ng-if="$parent.userType == 'admin'" align="center">
+            <button  style="margin-right: auto" class="btn btn-success animated infinite tada" ng-click="addSlide()">Add Slide</button>
+        </div>
+            <div>
+                    <carousel interval="myInterval">
+                        <slide ng-repeat="slide in slides">
+                            <img class="img-responsive" ng-src="{{slide.Image.url}}" style=" width: 500vw; height: 75vh;  " ng-dblclick="CarouselClick(slides.indexOf(slide))">
+                        </slide>
+                    </carousel>
+            </div>
+        </div>
+        <div class="col-lg-1 col-md-1 visible-lg visible-md"></div>
+    </div>
+
+    <div class="row" dir="rtl">
+        <div class="col-lg-2 col-md-2 col-sm-2 visible-lg visible-md visible-sm"></div>
+        <div class="col-lg-8 col-md-8 col-sm-8 ">
+            <h2 style="text-align: center">
+                {{MainAccount.companyMainTextTitle}} </h2>
+            <br/>
+            <p> {{MainAccount.companyMainTextContent}}</p>
+
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 visible-lg visible-md visible-sm"></div>
+    </div>
+
+    <div class="row" id="three-column" class="container" style="background-color: #222; ">
+
+        <button  ng-if="$parent.userType == 'admin'" class="btn btn-warning center-block animated infinite swing"  ng-click="addMessages()">Add Message</button>
+
+        <div class="col-lg-2 col-md-2 visible-lg visible-md"> </div>
+        <div class="col-md-2" ng-repeat="message in allMessagesArr"  ng-dblclick="messageClick(message.messageParseId)">
+
+            <div id="tbox1" >
+                <div class="title">
+                    <h1 dir="ltr"> {{message.title}}  </h1>
+                </div>
+               <h3 dir="ltr" > {{message.date}}</h3>
+                <br/>
+                <textarea  id="" cols="15" rows="5" style="color: #a6e1ec; background-color: transparent;resize: inherit ;  border: none;">{{message.content}}</textarea>
+
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 visible-lg visible-md"></div>
+
+    </div>
+
+    <br/>
+    <div class="row">
+        <div class="col-lg-2 col-md-2 visible-lg visible-md"></div>
+        <div class="col-md-8 col-lg-8">
+            <div  ng-if="userType == 'admin'" align="center">
+                <button ng-hide="false" class="btn btn-danger animated infinite jello" ng-click="openVideoDialog()">
+                    Edit Video</button> </div>
+            <!--youtube-->
+            <div >
+                <youtube-video video-url="MainAccount.theCompanyVideo" style="width:100%" player-height= auto; ></youtube-video>
+            </div>
+
+        </div>
+        <div class="col-lg-2 col-md-2 visible-lg visible-md"></div>
+    </div>
+
+</div>

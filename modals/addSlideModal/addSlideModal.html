@@ -1,0 +1,14 @@
+<div class="modal-header">
+    <h1 class="modal-title">Add New Photo</h1>
+</div>
+<div class="modal-body">
+    <div>
+        <input type="file" value="Choose Image"   onchange="angular.element(this).scope().uploadFile(this.files)"/>
+
+        <br/>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="bt btn-primary" ng-click="ok()">OK</button>
+    <button class="bt btn-warning" ng-click="cancel()">Cancel</button>
+</div>

@@ -1,0 +1,19 @@
+<div class="modal-header">
+    <h1 class="modal-title">Please enter new instructor name</h1>
+</div>
+<div class="modal-body">
+    <label>Instructor name</label>
+    <br/>
+    <input type="text"  ng-model="newGuideName"/>
+    <br/>
+    <label>Instructor content</label>
+    <textarea  ng-model="newGuideContent"></textarea><br/>
+    <!--<input type="file" value="Choose Image"-->
+           <!--onchange="angular.element(this).scope().uploadFile(this.files)"/>-->
+    <!--<br/>-->
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" ng-click="cancel()">CANCEL</button>
+</div>

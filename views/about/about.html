@@ -1,0 +1,66 @@
+<div>
+    <ng-include src="'views/head/head.html'"></ng-include>
+</div>
+
+<div class="ContentClass">
+    <div class="row" style = "float: left">
+        <!--------------------MARGIN  ------------------------>
+            <div class="col-lg-1 col-md-1 visible-lg visible-md">
+
+        </div>
+
+
+        <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 " >
+            <!---------------- COMPANY NAME-------------->
+            <h1 style="text-align:left;font-size: 250%;color: #d58512"
+                type="text" ng-dblclick="ChangeCompanyName()"/>{{MainAccount.theCompanyName}} Inc.</h1>
+            <hr/>
+            <!---------------- COMPANY DESCRIPTION-------------->
+
+            <!--<textarea readonly style = " border: none ; background-color: transparent  ; resize: none ;-->
+                <!---webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;"-->
+
+            <!--</textarea>-->
+            <p style="font-style: oblique; font-size: 150%" id="companyDescription"  ng-dblclick="ChangeCompanyDescription()">{{MainAccount.theCompanyDescription}}
+            </p>
+
+            <br/>
+            <br/>
+            <!---------------- COMPANY ADDRESS-------------->
+            <p align="left" ng-dblclick="ChangeCompanyAddress()">Address:{{
+                MainAccount.theCompanyAddress}}</p>
+            <!---------------- COMPANY PHONE & EMAIL-------------->
+            <div align="left">
+                <span ng-dblclick="ChangeCompanyPhone()">Telephone:
+                    <a href="tel:{{MainAccount.theCompanyPhone}}">
+                            {{MainAccount.theCompanyPhone}}
+                    </a>
+                </span>
+                <br/>
+                <span ng-dblclick="ChangeCompanyEmail()"> E-mail:
+                    <a href="mailto:{{MainAccount.theCompanyEmail}}" >
+                        {{MainAccount.theCompanyEmail}}
+                    </a>
+                </span>
+
+            </div>
+            <br/>
+            <br/>
+        </div>
+        <div class="col-lg-1 col-md-1 visible-lg visible-md" >
+        </div>
+    </div>
+    <!---------------- MAP -------------->
+    <div class="row" align="center" >
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+            <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+
+                <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
+                </ui-gmap-marker>
+
+            </ui-gmap-google-map>
+
+        </div>
+    </div>
+
+</div>

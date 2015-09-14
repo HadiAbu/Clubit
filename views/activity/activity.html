@@ -1,0 +1,106 @@
+
+<div>
+    <ng-include src="'views/head/head.html'"></ng-include>
+</div>
+
+
+<div  class="row " ng-dblclick="ChangeActivityBackgroud()">
+
+    <div class="col-md-2 visible-lg visible-md" > </div>
+    <div class="col-md-8" style="background-color:inherit;">
+        <h1 style="text-align: center;color: darkred;font-size: 250%"> {{name}} </h1>
+        <img ng-src="{{tempPic[0].picture.url}}" style="width:100% ;height:500px"/>
+    </div>
+    <div class="col-md-2 visible-lg visible-md"> </div>
+
+</div>
+
+
+<div class="row" dir="auto">
+    <div class="col-lg-2 col-md-2 col-sm-2 visible-lg visible-md visible-sm"></div>
+    <div class="col-lg-8 col-md-8 col-sm-8" ng-dblclick="openTextDialog()">
+        <br/>
+        <p  style="text-align: center" > {{description}}</p>
+
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-2 visible-lg visible-md visible-sm"></div>
+</div>
+<br/>
+<br/>
+
+
+
+</div>
+
+
+<br/>
+
+
+<div class="row">
+    <div class="col-md-2"></div>
+
+    <div class="col-md-8" >
+            <div ng-if="userType == 'admin'" align="center">
+                <button ng-hide="false" class="btn btn-success animated infinite pulse" ng-click="openVideoDialog()">Edit Video</button>
+            </div>
+        <div >
+            <youtube-video video-url="videoUrlParse" style="width:100%" player-height= auto; ></youtube-video>
+            <!--<input type="button" value="CHANGE URL" ng-click="openVideoDialog()"/>-->
+        </div>
+    </div>
+
+    <div class="col-md-2" >
+        </div>
+</div>
+
+
+<br/>
+<br/>
+<br/>
+
+
+
+
+<div  ng-show="userType=='admin' || userType=='member'"   class="row ContentClass"
+      id="three-column" class="container" style="background-color: #222;" ng-mouseover='ng-class' >
+
+    <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2"></div>
+
+    <button  align="center" ng-if="userType == 'admin'" style="margin-right: auto" class="btn btn-warning animated infinite pulse text-center"
+             ng-click="addMessagesActivity()">Add Message</button>
+
+    <div class="col-xs-2 col-md-2 col-lg-2 col-sm-2" ng-repeat="message in messagesActivityArray"
+         ng-dblclick="messageActivityClick(message.messageParseId)" >
+
+        <div id="tbox1">
+            <div class="title">
+                <h1> {{message.title}}</h1>
+            </div>
+            <h3> {{message.date}}</h3>
+            <br/>
+            <!--<p> {{message.content}}</p>-->
+            <textarea  id="" cols="15" rows="5" style="color: #a6e1ec; background-color: transparent;resize: inherit ;  border: none;">{{message.content}}</textarea>
+            <!--<a href="#" class="button">Learn More</a> </div>-->
+        </div>
+        <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2"></div>
+    </div>
+</div>
+
+<br/>
+<button style="margin-left: 290px;" ng-show="userType=='admin'" class="btn btn-danger animated infinite pulse"  ng-click="addGuide()">Add New Guide</button>
+
+<div class="row">
+    <h1 style="text-align: center">Guides</h1>
+    <div class="col-xs-2 col-lg-2 col-md-2"> </div>
+    <div  ng-repeat="employe in EmployeesArray" class="col-xs-2 col-md-2 col-lg-2 col-sm-2">
+            <div ng-dblclick="openGuideDialog(EmployeesArray.indexOf(employe))">
+                <div class="container" style="text-align: center">
+                    <img ng-dblclick="ChangeGuidePhoto(EmployeesArray.indexOf(employe))" style="width:15vw; height: 30vh; " ng-src= "{{employe.employeeProfile}}"   />
+                    <h3>{{employe.employeeName}}</h3>
+                    <p>{{employe.employeeDescription}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-2 col-lg-2 col-md-2"></div>
+</div>
