@@ -4,14 +4,7 @@
 GlobalParseConfiguration = {
     parsePassword : "",
     userName:"",
-    //applicationId :"P1ldK1UB1ik7RMBy3C4UdfFd7Bxku0s9WpGOuNXA",
-    //restApiId:"PO5TzAZOYt0pbrsG0t7w5F1R9dMKGEMoHPSUiFCi"
-    //userName:"",
-    //applicationId :"BtPkFqNcVDt1SouYf0MhMfurgdNL8tFiMWGOu4DT",
-    //restApiId:"Jqbp9mcH4FuP3SoV9yIZS3GuJl4Qt86NInlNLWvV"
-    applicationId:"GP1iAm5KC8hYfOmRNNQX72ylfQj4VuvB5sdyyEug",
-    restApiId:"z2EDgy2zX8YR3IbfgUhP3HnBU4JvzoyLY8XTJGBp"
-
+    
 
 };
 
